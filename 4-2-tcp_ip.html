@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body style="margin: 20px;">
+    <a href="index.html">Zurück zum Inhaltsverzeichnis</a>
+    <h1>4.2. Etablierung wichtiger Protokollstandards (TCP/IP)</h1>
+    <p>
+        Damit die einzelnen IMPs miteinander kommunizieren können, müssen sie sich auf eine einheitliche “Sprache”
+        einigen,
+        welche man auch Protokoll nennt. Die Priorität der einzelnen Protokolle wird in einem sogenannten
+        “<i>Schichtenmodell</i>”
+        festgelegt. Anfänglich verwendete das ARPAnet den Protokollstandard “<i>1822-Protocol</i>”, welches nach dem
+        “Bolt
+        Beranek and
+        Newman Inc. Report 1822” benannt wurde, in dem dieser Standard beschrieben wurde. Das 1822-Protocol regelte
+        jedoch nur
+        die Kommunikation der einzelnen IMPs untereinander, nicht die Kommunikation der einzelnen Host-Computer mit den
+        IMPs.
+        Ein wichtiger Bestandteil dieses Protokolls war, dass die einzelnen Pakete zwei verschiedene Bereiche enthalten
+        mussten:
+        einen Informationsteil, welcher die zu übermittelnden Daten enthielt und einen sogenannten Header (dt.
+        Kopfbereich). Der
+        Header enthielt eine numerische Empfängeradresse, welche mit der heute bekannten IP-Adresse verglichen werden
+        kann. Sie
+        war dafür zuständig, damit das Paket seinen entsprechenden Empfänger erreichen kann. Im 1822-Protocol wurde
+        außerdem
+        festgelegt, dass einzelne Pakete nicht größer als 8159 Bits (≈ 1020 Zeichen) sein dürfen, wobei 96 Bits (≈ 12
+        Zeichen)
+        für den Header reserviert waren.
+        Diese Limitierungen in der Länge führten dazu, dass über das 1822-Protocol effektiv nur 256 verschiedene
+        Adressen
+        vergeben werden konnten. Bei der Skalierung des ARPAnets war diese Eigenschaft kontraproduktiv, da somit nur
+        maximal 256
+        verschiedene IMPs bzw. Computer miteinander kommunizieren konnten. Aus diesem Grund wurde es notwendig ein neues
+        Protokoll einzuführen, welches das 1822-Protocol ablösen und ein größeres Adressenspektrum zulassen sollte. Die
+        “<i>International Organization for Standardization</i>” (ISO) schlug das "<i>OSI-Schichtenmodell</i>" vor,
+        welches ein
+        komplett neues
+        Protokoll-Schichtensystem war, das grundlegend anders und komplexer als das bisher genutzte
+        “<i>DoD-Schichtenmodell</i>”
+        aufgebaut war. Die damals großen Computerfirmen unterstützen größtenteils das Vorhaben der ISO und nutzen dieses
+        als
+        Übertragungsprotokoll in ihren Computern. Da das OSI-Schichtenmodell jedoch wenig praxiserprobt war und sich in
+        der
+        Praxis als wesentlich zu komplex erwies, setzte sich schon bald ein anderes Schichtenmodell durch. Das
+        DoD-Modell
+        basiert auf dem vorher im ARPAnet genutzten Schichtmodell und verwendet anstatt des 1822-Protocol das
+        TCP/IP-Protokoll
+        für die Kommunikation zwischen den einzelnen IMPs bzw. Computern. Das DoD-Modell hat sich, anders als das
+        OSI-Modell,
+        bereits in der Praxis bewährt. Spätestens als Computerunternehmen wie “<i>Sun Microsystems</i>” oder “<i>Cisco
+            Systems</i>”
+        ebenfalls
+        auf das TCP/IP-Protokoll umstellten, war der Kampf gegen das OSI-Schichtenmodell gewonnen.
+        TCP/IP ist nicht ein einzelnes Übertragungsprotokoll, sondern bezeichnet eine Gruppe von
+        Übertragungsprotokollen, welche
+        auf dem IP-Protokoll basieren. Das IP-Protokoll verwendet, wie bereits das 1822-Protocol einen Header und einen
+        Informationsteil, wobei die einzelnen Paket hier eine Maximalgröße von 64 Kilobyte haben kann (= 512000 Bits)
+        was
+        ungefähr der 64-fachen Größe eines 1822er-Pakets entspricht. Außerdem können beim IPv4-Protokoll (vierte Version
+        des
+        IP-Protokolls) rund vier Milliarden Adressen vergeben werden, was ein enormer Schritt gegenüber den 256 Adressen
+        des
+        1822-Protocols ist.
+    </p>
+
+    <p>
+        Das TCP-Protokoll hat die wichtige Aufgabe, die vom Absender gesendeten Pakete beim Empfänger auf
+        Vollständigkeit zu
+        prüfen und dies dem Absender zu quittieren. Um dies zu gewährleisten, werden die einzelnen Pakete mit einer
+        durchlaufenden Sequenznummer versehen. Sollte vom Empfänger festgestellt werden, dass eine bestimmte
+        Sequenznummer
+        fehlt, kann das fehlende Paket vom Absender nachgefordert werden.
+        Das DoD-Schichtenmodell und die TCP/IP-Protokolle sind auch heute noch die meistgenutzten Standards und
+        garantieren die
+        uns heute bekannte hohe Flexibilität und Übertragungsstabilität des uns bekannten Internets.
+    </p>
+
+    <br><br><a href="5-1-hypertext.html">Weiter zu: 5.1. Tim Berners-Lee und die Vision des Hypertextes</a>
+
+    <hr>
+    <p>
+        &copy; 2024 Kurt Krüger - <a href="https://kurt-krueger.com">https://kurt-krueger.com</a> - <a
+            href="https://kurt-krueger.com/privacy">Impressum</a>
+    </p>
+
+</body>
+
+</html>
